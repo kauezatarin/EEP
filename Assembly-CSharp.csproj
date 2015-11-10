@@ -6,7 +6,7 @@
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
 	<RootNamespace></RootNamespace>
-	<ProjectGuid>{5DE0ACA6-FA84-FE07-EC87-406303707EE5}</ProjectGuid>
+	<ProjectGuid>{C03C92E3-59F3-C815-D29C-2558CB08E743}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<AssemblyName>Assembly-CSharp</AssemblyName>
@@ -45,7 +45,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripst\Character_behavior.cs" />
+     <Compile Include="Assets\Scripst\Character_behaviour.cs" />
      <Compile Include="Assets\Scripst\Game_behaviour.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
