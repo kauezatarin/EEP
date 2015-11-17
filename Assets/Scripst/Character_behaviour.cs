@@ -31,10 +31,7 @@ public class Character_behaviour : MonoBehaviour
 	{
 		float vertical = Input.GetAxisRaw("Vertical");
 		float horizontal = Input.GetAxisRaw("Horizontal");
-		if (Game_behaviour.ispaused == 0) {
-		
-			Move(vertical, horizontal);
-		}
+		Move(vertical, horizontal);
 	}
 	#endregion
 	
