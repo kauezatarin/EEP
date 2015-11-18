@@ -12,15 +12,18 @@ public class Menu : MonoBehaviour {
 	void Update () {
 	
 	}
-
-	void Play(){
+	public void Play(){
 		Application.LoadLevel ("Fase1");
 	}
-	void Exit(){
+	public void Exit(){
 		Application.Quit ();
 	}
-	void Menu_principal()
+	public void Menu_principal()
 	{
 		Application.LoadLevel ("Menu");
+	}
+	public void Credits()
+	{
+		Application.LoadLevel ("Credits");
 	}
 }

@@ -7,6 +7,7 @@ public class Game_behaviour : MonoBehaviour {
 	public static int ispaused; //variavel de controle
 	public Rect menu_position;//Posiçao e tamanho da janela de Pause
 
+
 	// Use this for initialization
 	void Start () {
 		ispaused = 0;//controla quando a janela de pause deve aparecer.
@@ -46,6 +47,7 @@ public class Game_behaviour : MonoBehaviour {
 	void janela(int novajanela)
 	{
 		GUI.FocusWindow (novajanela);//foca a janela de pause
+		GUI.backgroundColor = new Color(0,0,0,250f);
 
 		//continua o jogo.
 		if (GUI.Button(new Rect(110,30,80,20),"Resume")) {
