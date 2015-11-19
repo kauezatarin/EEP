@@ -18,6 +18,7 @@ public class Game_behaviour : MonoBehaviour {
 		restart = 0;
 		victory = 0;
 		tempo = 0;
+		Cursor.visible = false;
 	}
 	
 	// Update is called once per frame
@@ -66,17 +67,20 @@ public class Game_behaviour : MonoBehaviour {
 		{
 			ispaused = 1;//altera o valor da variavel de controle e abre a janela de pause
 			Time.timeScale = 0;//congela todos os itens da tela 'Pausa o jogo'.
+			Cursor.visible = true;//mostra o mouse
 			Debug.Log ("ispaused = "+ispaused);
 		}
 		else if (Input.GetKeyDown (KeyCode.Escape) && ispaused == 1) 
 		{
 			ispaused = 0;//altera o valor da variavel de controle e fecha a janela de pause
 			Time.timeScale = 1;//descongela os itens da tela 'Despausa o jogo'
+			Cursor.visible = false;//esconde o mouse
 			Debug.Log ("ispaused = "+ispaused);
 		}
 		else if (Input.GetKeyDown (KeyCode.R) && ispaused == 0) 
 		{
-			restart = 1;//altera o valor da variavel de controle e fecha o pop up de restart
+			restart = 1;//altera o valor da variavel de controle e abre o pop up de restart
+			Cursor.visible = true;//mostra o mouse
 			Time.timeScale = 0;//congela os itens da tela 'Pausa o jogo'
 		}
 	}
@@ -92,6 +96,7 @@ public class Game_behaviour : MonoBehaviour {
 			Time.timeScale = 1;
 			ispaused = 0;
 			Time.timeScale = 1;
+			Cursor.visible = false;//esconde o mouse
 		}
 		//vai para o menu principal.
 		if (GUI.Button(new Rect(110,60,80,20),"Main Menu")) {
@@ -109,7 +114,7 @@ public class Game_behaviour : MonoBehaviour {
 
 	}
 
-	//conteudo do popup de pausa.
+	//conteudo do popup de restart.
 	void restart_pop(int novajanela)
 	{
 		GUI.FocusWindow (novajanela);//foca a janela de restart
@@ -122,10 +127,12 @@ public class Game_behaviour : MonoBehaviour {
 		if (GUI.Button(new Rect(180,30,80,20),"Nao")) {
 			restart = 0;
 			ispaused = 0;
+			Cursor.visible = false;//esconde o mouse
 			Time.timeScale = 1;
 		}
 	}
 
+	//conteudo popup de win.
 	void victory_pop(int novajanela)
 	{
 		GUI.FocusWindow (novajanela);//foca a janela de victory
