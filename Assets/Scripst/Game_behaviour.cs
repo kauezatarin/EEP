@@ -55,6 +55,7 @@ public class Game_behaviour : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D objeto) {
 		if (objeto.gameObject.tag == "Box")
 		{
+			Cursor.visible = true;//mostra o mouse
 			Time.timeScale = 0;
 			victory = 1;
 		}
@@ -63,21 +64,21 @@ public class Game_behaviour : MonoBehaviour {
 	//Pausa e despausa o jogo
 	void Pause(){
 
-		if (Input.GetKeyDown (KeyCode.Escape) && ispaused == 0) 
+		if (Input.GetKeyDown (KeyCode.Escape) && ispaused == 0 && victory == 0) 
 		{
 			ispaused = 1;//altera o valor da variavel de controle e abre a janela de pause
 			Time.timeScale = 0;//congela todos os itens da tela 'Pausa o jogo'.
 			Cursor.visible = true;//mostra o mouse
 			Debug.Log ("ispaused = "+ispaused);
 		}
-		else if (Input.GetKeyDown (KeyCode.Escape) && ispaused == 1) 
+		else if (Input.GetKeyDown (KeyCode.Escape) && ispaused == 1 && victory == 0) 
 		{
 			ispaused = 0;//altera o valor da variavel de controle e fecha a janela de pause
 			Time.timeScale = 1;//descongela os itens da tela 'Despausa o jogo'
 			Cursor.visible = false;//esconde o mouse
 			Debug.Log ("ispaused = "+ispaused);
 		}
-		else if (Input.GetKeyDown (KeyCode.R) && ispaused == 0) 
+		else if (Input.GetKeyDown (KeyCode.R) && ispaused == 0 && victory == 0) 
 		{
 			restart = 1;//altera o valor da variavel de controle e abre o pop up de restart
 			Cursor.visible = true;//mostra o mouse
