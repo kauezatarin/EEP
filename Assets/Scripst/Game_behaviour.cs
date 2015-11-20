@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
 public class Game_behaviour : MonoBehaviour {
 
 	public static int ispaused; //variavel de controle do menu de pause
+	public static int begin;//indica se o player ja fez o primeiro movimento
 	public Rect menu_position;//Posiçao e tamanho da janela de Pause
 	public Rect pop_position;//Posiçao e tamanho do pop up de restart
 	private int restart;//variavel que controla pop-up de restart
 	private int victory;//variavel que diz se o jogo esta vecido ou nao
-	public TextMesh Score;
-	private float tempo;
+	public TextMesh Score;//armazena o objeto que printa o tempo
+	private float tempo;//contador de tempo
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +18,7 @@ public class Game_behaviour : MonoBehaviour {
 		restart = 0;
 		victory = 0;
 		tempo = 0;
+		begin = 0;
 		Cursor.visible = false;
 	}
 	
@@ -25,9 +26,11 @@ public class Game_behaviour : MonoBehaviour {
 	void Update () {
 		Pause ();//chama a funçao Pause.
 
-		tempo += Time.deltaTime;
-
+		if (begin == 1) {
+			tempo += Time.deltaTime;
+		}
 		AddScore(tempo);
+
 	}
 
 	public void AddScore(float newScore){

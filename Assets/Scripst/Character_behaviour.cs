@@ -32,6 +32,8 @@ public class Character_behaviour : MonoBehaviour
 		float vertical = Input.GetAxisRaw("Vertical");
 		float horizontal = Input.GetAxisRaw("Horizontal");
 		Move(vertical, horizontal);
+		if((vertical !=0 || horizontal != 0) && Game_behaviour.begin != 1)
+			Game_behaviour.begin = 1;
 	}
 	#endregion
 	
@@ -40,7 +42,7 @@ public class Character_behaviour : MonoBehaviour
 	{
 		m_Movement.Set(horizontal, vertical, 0.0f);
 		m_Movement = m_Movement.normalized * m_Speed * Time.deltaTime;
-		m_Rigidbody.MovePosition(m_Transform.position + m_Movement);
+		m_Rigidbody.MovePosition (m_Transform.position + m_Movement);
 	}
 	#endregion
 }
