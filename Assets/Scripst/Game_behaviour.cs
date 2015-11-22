@@ -124,7 +124,7 @@ public class Game_behaviour : MonoBehaviour {
 		GUI.FocusWindow (novajanela);//foca a janela de restart
 		GUI.backgroundColor = new Color(0,0,0,250f);
 
-		if (GUI.Button(new Rect(20,30,80,20),"Sim")) {
+		if (GUI.Button(new Rect(20,30,80,20),"Sim") || Input.GetKeyDown (KeyCode.Space)) {
 			Time.timeScale = 1;
 			Application.LoadLevel("Fase1");
 		}
