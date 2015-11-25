@@ -26,4 +26,8 @@ public class Menu : MonoBehaviour {
 	{
 		Application.LoadLevel ("Credits");
 	}
+	public void Ranking()
+	{
+		Application.LoadLevel ("Ranking");
+	}
 }

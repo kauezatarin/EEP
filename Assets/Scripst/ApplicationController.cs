@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ApplicationController : MonoBehaviour {
 
-	public static int numberPositionRanking = 5;
+	public static int numberPositionRanking = 1;
 
 	// Use this for initialization
 	void Start () {
