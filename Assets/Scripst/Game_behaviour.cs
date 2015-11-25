@@ -142,6 +142,7 @@ public class Game_behaviour : MonoBehaviour {
 		GUI.FocusWindow (novajanela);//foca a janela de victory
 		GUI.backgroundColor = new Color(0,0,0,250f);
 		GUI.Label(new Rect(90,25,200,100), "Seu tempo: "+tempo.ToString("f2"));
+		ApplicationController.AddToRanking (tempo);
 
 		if (GUI.Button(new Rect(20,60,80,20),"Sim")) {
 			Time.timeScale = 1;

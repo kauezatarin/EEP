@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripst\Game_behaviour.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripst\ApplicationController.cs">
     <Files>
-      <File FileName="Assets\Scripst\Game_behaviour.cs" Line="127" Column="81" />
+      <File FileName="Assets\Scripst\ApplicationController.cs" Line="26" Column="23" />
+      <File FileName="Assets\Scripst\RankingController.cs" Line="14" Column="70" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
