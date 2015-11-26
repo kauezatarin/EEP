@@ -34,7 +34,7 @@ public class Game_behaviour : MonoBehaviour {
 	}
 
 	public void AddScore(float newScore){
-		Score.text = "Tempo: "+newScore.ToString("f2");
+		Score.text = "Tempo: "+newScore.ToString("f1");
 	}
 
 	//User Interface
@@ -61,6 +61,8 @@ public class Game_behaviour : MonoBehaviour {
 			Cursor.visible = true;//mostra o mouse
 			Time.timeScale = 0;
 			victory = 1;
+			ApplicationController.AddToRanking (tempo);
+			Debug.Log("Bateu!");
 		}
 	}
 
@@ -141,8 +143,8 @@ public class Game_behaviour : MonoBehaviour {
 	{
 		GUI.FocusWindow (novajanela);//foca a janela de victory
 		GUI.backgroundColor = new Color(0,0,0,250f);
-		GUI.Label(new Rect(90,25,200,100), "Seu tempo: "+tempo.ToString("f2"));
-		ApplicationController.AddToRanking (tempo);
+		GUI.Label(new Rect(90,21,200,100), "Seu tempo: "+tempo.ToString("f1"));
+		GUI.Label(new Rect(83,35,200,100), "Melhor tempo: "+PlayerPrefs.GetFloat("Position"+0).ToString("f1"));
 
 		if (GUI.Button(new Rect(20,60,80,20),"Sim")) {
 			Time.timeScale = 1;
