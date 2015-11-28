@@ -11,6 +11,8 @@ public class ApplicationController : MonoBehaviour {
 		DontDestroyOnLoad (gameObject);
 
 		Application.LoadLevel ("Menu");
+		//ResetRanking(2);
+
 	}
 	
 	public static void AddToRanking(float tempo){

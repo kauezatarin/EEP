@@ -63,6 +63,7 @@ public class Game_behaviour : MonoBehaviour {
 			victory = 1;
 			ApplicationController.AddToRanking (tempo);
 			Debug.Log("Bateu!");
+			gameObject.GetComponent<AudioSource>().Play();
 		}
 	}
 
