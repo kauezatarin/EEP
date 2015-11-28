@@ -11,6 +11,7 @@ public class Game_behaviour : MonoBehaviour {
 	private int victory;//variavel que diz se o jogo esta vecido ou nao
 	public TextMesh Score;//armazena o objeto que printa o tempo
 	private float tempo;//contador de tempo
+	public AudioSource botao;
 
 	// Use this for initialization
 	void Start () {
@@ -101,6 +102,7 @@ public class Game_behaviour : MonoBehaviour {
 		//continua o jogo.
 		if (GUI.Button(new Rect(110,30,80,20),"Resume")) {
 			Time.timeScale = 1;
+			botao.Play();
 			ispaused = 0;
 			Time.timeScale = 1;
 			Cursor.visible = false;//esconde o mouse
@@ -108,14 +110,17 @@ public class Game_behaviour : MonoBehaviour {
 		//vai para o menu principal.
 		if (GUI.Button(new Rect(110,60,80,20),"Main Menu")) {
 			Time.timeScale = 1;
+			botao.Play();
 			Application.LoadLevel("Menu");
 		}
 		//reinicia o level
 		if (GUI.Button(new Rect(110,90,80,20),"Restart")) {
+			botao.Play();
 			restart = 1;
 		}
 		//Sai do jogo
 		if (GUI.Button(new Rect(110,120,80,20),"Exit")) {
+			botao.Play();
 			Application.Quit();
 		}
 
@@ -130,12 +135,14 @@ public class Game_behaviour : MonoBehaviour {
 		if (GUI.Button(new Rect(20,30,80,20),"Sim") || Input.GetKeyDown (KeyCode.Space)) {
 			Time.timeScale = 1;
 			Application.LoadLevel("Fase1");
+			botao.Play();
 		}
 		if (GUI.Button(new Rect(180,30,80,20),"Nao")) {
 			restart = 0;
 			ispaused = 0;
 			Cursor.visible = false;//esconde o mouse
 			Time.timeScale = 1;
+			botao.Play();
 		}
 	}
 
