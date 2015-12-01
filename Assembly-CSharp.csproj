@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripst\ApplicationController.cs" />
+     <Compile Include="Assets\Scripst\Camera_script.cs" />
      <Compile Include="Assets\Scripst\Character_behaviour.cs" />
      <Compile Include="Assets\Scripst\Game_behaviour.cs" />
      <Compile Include="Assets\Scripst\Menu.cs" />

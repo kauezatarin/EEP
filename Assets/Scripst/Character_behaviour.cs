@@ -12,8 +12,7 @@ public class Character_behaviour : MonoBehaviour
 	private Transform m_Transform;
 	private Vector3 m_Movement = Vector3.zero;
 
-	private bool walking;
-	private Animator playerAnimation;
+	//private Animator playerAnimation;
 	#endregion
 	
 	#region [ Start ]
@@ -26,8 +25,9 @@ public class Character_behaviour : MonoBehaviour
 	void Start()
 	{
 		// m_Rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
-		walking = false;
-		playerAnimation = GetComponent<Animator>();
+
+		//playerAnimation = GetComponent<Animator>();
+		//transform.eulerAngles = new Vector2(0, 180);//inicializa virado para a esquerda
 	}
 	#endregion
 	
@@ -49,22 +49,33 @@ public class Character_behaviour : MonoBehaviour
 		m_Movement = m_Movement.normalized * m_Speed * Time.deltaTime;
 		m_Rigidbody.MovePosition (m_Transform.position + m_Movement);
 
+		/*//direita
 		if(horizontal > 0 )
-			playerAnimation.SetBool("Walk",true);
+		{
+			transform.eulerAngles = new Vector2(0, 0);
+			playerAnimation.SetBool("WalkH",true);
+		}
+		//esquerda
 		else if(horizontal < 0)
 		{
-			playerAnimation.SetBool("Walk",true);
+			transform.eulerAngles = new Vector2(0, 180);
+			playerAnimation.SetBool("WalkH",true);
 		}
+		//cima
 		else if(vertical > 0)
 		{
-			playerAnimation.SetBool("Walk",true);
+			transform.eulerAngles = new Vector2(0, 0);
+			playerAnimation.SetBool("WalkU",true);
 		}
+		//baixo
 		else if(vertical < 0)
 		{
-			playerAnimation.SetBool("Walk",true);
+			transform.eulerAngles = new Vector2(0, 180);
+			playerAnimation.SetBool("WalkU",true);
 		}
 		else
-			playerAnimation.SetBool("Walk",false);
+			playerAnimation.SetBool("WalkU",false);
+			playerAnimation.SetBool("WalkH",false);*/
 	}
 	#endregion
 }

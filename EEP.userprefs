@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripst\Character_behaviour.cs">
     <Files>
-      <File FileName="Assets\Scripst\Character_behaviour.cs" Line="62" Column="21" />
+      <File FileName="Assets\Scripst\Character_behaviour.cs" Line="29" Column="3" />
+      <File FileName="Assets\Scripst\Camera_script.cs" Line="16" Column="82" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
