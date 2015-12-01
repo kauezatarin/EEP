@@ -20,9 +20,10 @@ public class RankingController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(Input.GetKeyDown (KeyCode.Escape))
+		if(Input.GetKeyDown(KeyCode.R))
 		{
-			Application.LoadLevel("Menu");
+			ApplicationController.ResetRanking(2);
+			Application.LoadLevel("Ranking");
 		}
 
 	}

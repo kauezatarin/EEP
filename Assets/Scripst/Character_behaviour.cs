@@ -11,6 +11,9 @@ public class Character_behaviour : MonoBehaviour
 	private Rigidbody2D m_Rigidbody;
 	private Transform m_Transform;
 	private Vector3 m_Movement = Vector3.zero;
+
+	private bool walking;
+	private Animator playerAnimation;
 	#endregion
 	
 	#region [ Start ]
@@ -23,6 +26,8 @@ public class Character_behaviour : MonoBehaviour
 	void Start()
 	{
 		// m_Rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+		walking = false;
+		playerAnimation = GetComponent<Animator>();
 	}
 	#endregion
 	
@@ -43,6 +48,23 @@ public class Character_behaviour : MonoBehaviour
 		m_Movement.Set(horizontal, vertical, 0.0f);
 		m_Movement = m_Movement.normalized * m_Speed * Time.deltaTime;
 		m_Rigidbody.MovePosition (m_Transform.position + m_Movement);
+
+		if(horizontal > 0 )
+			playerAnimation.SetBool("Walk",true);
+		else if(horizontal < 0)
+		{
+			playerAnimation.SetBool("Walk",true);
+		}
+		else if(vertical > 0)
+		{
+			playerAnimation.SetBool("Walk",true);
+		}
+		else if(vertical < 0)
+		{
+			playerAnimation.SetBool("Walk",true);
+		}
+		else
+			playerAnimation.SetBool("Walk",false);
 	}
 	#endregion
 }

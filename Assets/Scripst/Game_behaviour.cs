@@ -11,7 +11,8 @@ public class Game_behaviour : MonoBehaviour {
 	private int victory;//variavel que diz se o jogo esta vecido ou nao
 	public TextMesh Score;//armazena o objeto que printa o tempo
 	private float tempo;//contador de tempo
-	public AudioSource botao;
+	public AudioSource botao;//arquivo de audio
+	private int action;//seletor de açoes
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,7 @@ public class Game_behaviour : MonoBehaviour {
 		victory = 0;
 		tempo = 0;
 		begin = 0;
+		action = 0;
 		Cursor.visible = false;
 	}
 	
@@ -27,7 +29,7 @@ public class Game_behaviour : MonoBehaviour {
 	void Update () {
 		Pause ();//chama a funçao Pause.
 
-		if (begin == 1) {
+		if (begin == 1 && action == 0) {
 			tempo += Time.deltaTime;
 		}
 		AddScore(tempo);
@@ -108,13 +110,18 @@ public class Game_behaviour : MonoBehaviour {
 			Cursor.visible = false;//esconde o mouse
 		}
 		//vai para o menu principal.
-		if (GUI.Button(new Rect(110,60,80,20),"Main Menu")) {
-			Time.timeScale = 1;
-			botao.Play();
-			Application.LoadLevel("Menu");
+		if (GUI.Button(new Rect(110,60,80,20),"Main Menu") || action == 1) {
+			if(action == 0)
+			{
+				action = 1;
+				Time.timeScale = 1;
+				botao.Play();
+			}
+			if(!botao.isPlaying)
+				Application.LoadLevel("Menu");
 		}
 		//reinicia o level
-		if (GUI.Button(new Rect(110,90,80,20),"Restart")) {
+		if (GUI.Button(new Rect(110,90,80,20),"Restart")) {			
 			botao.Play();
 			restart = 1;
 		}
@@ -132,10 +139,15 @@ public class Game_behaviour : MonoBehaviour {
 		GUI.FocusWindow (novajanela);//foca a janela de restart
 		GUI.backgroundColor = new Color(0,0,0,250f);
 
-		if (GUI.Button(new Rect(20,30,80,20),"Sim") || Input.GetKeyDown (KeyCode.Space)) {
-			Time.timeScale = 1;
-			Application.LoadLevel("Fase1");
-			botao.Play();
+		if (GUI.Button(new Rect(20,30,80,20),"Sim") || Input.GetKeyDown (KeyCode.Space) || action == 2) {
+			if(action == 0)
+			{
+				Time.timeScale = 1;
+				botao.Play();
+				action = 2;
+			}
+			if(!botao.isPlaying)
+				Application.LoadLevel("Fase1");
 		}
 		if (GUI.Button(new Rect(180,30,80,20),"Nao")) {
 			restart = 0;
